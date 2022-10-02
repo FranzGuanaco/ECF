@@ -26,6 +26,11 @@ $tableClient = "CREATE TABLE Clients_data
     [ 'Pierre Moulin', 'technician', 'root'], ]; */
 
 
+  //  $check = $_POST['check'];
+
+
+    $addColumn = "ALTER TABLE Clients_data 
+        ADD Activation bit not null";
     
 
 
@@ -43,11 +48,15 @@ try {
     }
     $pdo->commit(); */
 
-    
+   if ($pdo->query($addColumn)) {
 
+    echo 'ye';
+   }
 
-    
-    
+   else {
+
+    echo 'why';
+   }
 
    
 }
