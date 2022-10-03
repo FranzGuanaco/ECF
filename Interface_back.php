@@ -25,14 +25,12 @@ $tableClient = "CREATE TABLE Clients_data
     [ 'Fiona Desley', 'technician', 'root'],
     [ 'Pierre Moulin', 'technician', 'root'], ]; */
 
+   
 
-  //  $check = $_POST['check'];
-
-
-    $addColumn = "ALTER TABLE Clients_data 
-        ADD Activation bit not null";
     
-
+$test = "UPDATE Clients_data
+        SET activation=1
+        WHERE name='Jean Frederic';";
 
 
 try {
@@ -48,18 +46,17 @@ try {
     }
     $pdo->commit(); */
 
-   if ($pdo->query($addColumn)) {
 
-    echo 'ye';
-   }
+    if (isset($_POST['valider'])) {
 
-   else {
-
-    echo 'why';
-   }
-
+        echo 'oui';
    
 }
+
+    else {
+    echo 'why';
+
+ }}
 
 catch(PDOException $e) {
 
