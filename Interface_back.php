@@ -2,36 +2,22 @@
 
 $mysqlDsn = 'mysql: host=localhost; dbname=dbClient';
 
-
-
-/*$DBClient = "CREATE DATABASE dbClient";
-$tableClient = "CREATE TABLE Clients_data
-( Id int not null auto_increment,
-    name varchar (50) not null,
-    description varchar (50) not null, 
-    url varchar (50) not null,
-    primary key (Id)
-
-)"; */
-
-/* $data = [
-    ['Jean Frederic', 'manager', 'root'],
-    [ 'Marc Ruffier', 'technician', 'root'],
-    [ 'Stephanie Dublanc', 'technician', 'root'],
-    [ 'Ashley Fiss', 'technician', 'root'], 
-    [ 'Frank Lin', 'technician', 'root'],
-    [ 'Bastien Cedric', 'technician', 'root'],
-    [ 'Jean Noire', 'technician', 'root'],
-    [ 'Fiona Desley', 'technician', 'root'],
-    [ 'Pierre Moulin', 'technician', 'root'], ]; */
-
-
-  //  $check = $_POST['check'];
-
-
-    $addColumn = "ALTER TABLE Clients_data 
-        ADD Activation bit not null";
     
+$test = $_POST['valider'];
+$nom = $_POST[''];
+
+
+/*$activation = "UPDATE Clients_data
+SET Activation=1
+where name = 'Frank Lin';";
+
+$desactivation = "UPDATE Clients_data
+SET Activation=0
+where name = 'Frank Lin';";
+*/
+
+$test = "UPDATE Clients_data SET activation = (CASE WHEN activation = 1 THEN 0 ELSE 1 END) WHERE name = 'Frank Lin';";
+
 
 
 
@@ -39,27 +25,19 @@ try {
 
     $pdo = new PDO($mysqlDsn, $db_password ='root', $db_user ='root');
 
-   /*  $stmt = $pdo->prepare("INSERT INTO Clients_data (name, description, url) VALUES (?,?,?)");
+ /* $testActivation = ("SELECT Activation from Clients_data where name = 'Frank Lin';");
+   $user = $pdo -> query($testActivation); */
 
-    $pdo->beginTransaction();
-    foreach ($data as $row)
-    {
-        $stmt->execute($row);
-    }
-    $pdo->commit(); */
 
-   if ($pdo->query($addColumn)) {
+ if ($pdo -> query($test)){
 
-    echo 'ye';
-   }
+   echo 'oui';}
+   else{
+      echo 'non';
+ };
 
-   else {
+ }
 
-    echo 'why';
-   }
-
-   
-}
 
 catch(PDOException $e) {
 
