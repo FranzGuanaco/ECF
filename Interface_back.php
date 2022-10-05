@@ -29,9 +29,13 @@ try {
    $user = $pdo -> query($testActivation); */
 
 
- if ($pdo -> query($test)){
+ if (isset($_POST['valider'])){
 
-   echo 'oui';}
+    $pdo -> query($test);
+
+   echo 'oui';
+
+}
    else{
       echo 'non';
  };
