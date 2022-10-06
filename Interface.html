@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
+<meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Interface</title>
+    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='interface.css'>
+    
+   
+   
     
 </head>
 <body>
-    
-
-    
-
+    <!-- carré example -->
       
-    <div style="border: 1px solid black; padding:20px; width: 466px; height: 150px;">
-      
-      
+<div style="border: 1px solid #0C0808; padding:20px; width: 770px; height: 300px; border-radius:16px;">
         <form action="Interface_back.php" method="POST" name="Marc Ruffier">
-       
-        <input type="submit" name="valider" />
 
-       
-       
-       
-       
-        <h1>Jean Frederic</h1>
+          <div style="margin-top: 20px; font-size: 24px;">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-7 pull-right">
+            <p>client-id</p>
+            <p>client-name</p>
+            <p>short-description</p>
+            <p>url</p>
+          </div>
+          </div>
 
         </form>
+    
+     
+      <!-- switch button checker margin -->
+      <div style="margin-top: 220px;">
+      <div class="col-xs-1 text-center col-sm-1 col-md-3 col-lg-4 ;">
+      <label class="switch" id="form" action="Interface_back.php" method="POST" name="Marc Ruffier">
+        <input type="checkbox" name="valider" checked>
+        <span class="slider round"></span>
+      </label>
+      </div>
+      </div>
+      
+</div>
+
 </body>
+<script>
+    
+</script>
 </html>
