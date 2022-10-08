@@ -66,3 +66,39 @@ input:checked + .slider:after
   content:'ON';
    left: 33%;
 }
+
+#save {
+  visibility:hidden;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #B2CE79;
+  width: 350px;
+  height: 109px;
+  border-radius: 16px;
+  
+
+}
+
+.button1:hover {
+  background-color: #75A233;
+  color: white;
+}
+
+input{
+  text-align:center;
+
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #B2CE79;
+  width: 157px;
+  height: 81px;
+  border-radius: 16px;
+  
+
+}

@@ -6,6 +6,7 @@ header('Location: hhttp://localhost:8888/index.php/ECF/ECF/Interface.php');
 $test = $_POST['valider'];
 $nom = $_POST[''];
 
+// activation (on) est agal à 1
 
 $test = "UPDATE Clients_data SET activation = (CASE WHEN activation = 1 THEN 0 ELSE 1 END) WHERE name = 'Frank Lin';";
 
