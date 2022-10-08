@@ -1,3 +1,10 @@
+<?php
+
+  require("user.php");
+  $Usr = afficher();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,14 +55,15 @@
 
 
     <!-- carré example -->
-      
+    
+
     <div style="padding-left: 35px; padding-top: 200px;">
 <div style="border: 1px solid #0C0808; width: 770px; height: 300px; border-radius:16px; padding-top: 60px;">
         <form action="function.php" method="POST" name="Marc Ruffier">
 
     
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
-            <p>client-id</p>
+            <p></p>
             <p>client-name</p>
             <p>short-description</p>
             <p>url</p>
@@ -66,6 +74,9 @@
         
      
       <!-- switch button checker margin -->
+
+      
+
         <div class="col-xs-7 text-center col-sm-7 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
           <label class="switch">
@@ -74,8 +85,9 @@
           </label>
           <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'">
         </div>
-    
-          
+
+     
+         
       
 
 
