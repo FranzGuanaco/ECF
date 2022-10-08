@@ -1,6 +1,6 @@
 <?php require 'connection.php';
 
-
+header('Location: hhttp://localhost:8888/index.php/ECF/ECF/Interface.php');
 
     
 $test = $_POST['valider'];
@@ -19,12 +19,8 @@ try {
 
     $pdo -> query($test);
 
-   echo 'oui';
-
 }
-   else{
-      echo 'non';
- };
+  
 
  }
 
