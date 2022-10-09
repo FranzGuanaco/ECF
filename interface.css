@@ -102,3 +102,13 @@ input{
   
 
 }
+
+
+.user_style{
+  border: 1px solid #0C0808; 
+  color: white;
+  width: 770px; 
+  height: 300px; 
+  border-radius:16px; 
+  padding-top: 60px;
+}

@@ -1,8 +1,20 @@
 <?php
+$mysqlDsn = 'mysql: host=localhost; dbname=dbClient';
 
-  require("user.php");
-  $Usr = afficher();
-?>
+try {
+
+$pdo = new PDO($mysqlDsn, $db_password ='root', $db_user ='root');
+
+$query = $pdo ->query("SELECT * FROM Clients_data Order by Id DESC");
+$post = $query -> fetchAll(PDO::FETCH_OBJ);
+}
+
+catch(PDOException $e) {
+  echo "rpr". $e->getMessage();
+
+}
+
+  ?>
 
 
 <!DOCTYPE html>
@@ -54,24 +66,24 @@
 </div>
 
 
-    <!-- carré example -->
+    <!-- carré user -->
     
-
+    <?php foreach($post as $posts): ?>
     <div style="padding-left: 35px; padding-top: 200px;">
 <div style="border: 1px solid #0C0808; width: 770px; height: 300px; border-radius:16px; padding-top: 60px;">
         <form action="function.php" method="POST" name="Marc Ruffier">
 
     
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
-            <p></p>
-            <p>client-name</p>
-            <p>short-description</p>
+            <p><?= $posts->Id ?></p>
+            <p><?= $posts->name ?></p>
+            <p><?= $posts->description ?></p>
             <p>url</p>
         </div>
       
           
 
-        
+      
      
       <!-- switch button checker margin -->
 
@@ -86,7 +98,7 @@
           <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'">
         </div>
 
-     
+        <?php endforeach ?>
          
       
 
@@ -103,7 +115,7 @@
   } else {
     x.style.display = "none";
   }
-	
+  
 
 }
 </script>
