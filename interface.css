@@ -113,4 +113,13 @@ input{
   border-radius:16px; 
   padding-top: 60px;
   
+  
 }
+
+.footer{
+  position: absolute;
+  
+  padding-top: 10%;
+  width: 100%;
+}
+

@@ -34,8 +34,15 @@ catch(PDOException $e) {
    
     
 </head>
-<body>
+<body style="height:100%;">
 
+<div style="border: 1px solid #443E3E; width: 100%; height: 55px;">
+<div style="padding-left: 35px; padding-top: 10px;">
+<h4>API SALLE DE SPORT</h4>
+</div>
+</div>
+    
+<header>
    <!-- 1er carré example -->
 
   <div style="padding-left: 35px; padding-top: 30px;">
@@ -44,36 +51,35 @@ catch(PDOException $e) {
 
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
       <input type="text" class="button1" placeholder="Client_name">
-      </div>
+    </div>
 
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1" style="margin-left: 11px;">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1" style="margin-left: 11px;">
       <input type="text" class="button1" placeholder="Client_id">
-      </div>
+    </div>
 
     <div style="width: 28%; height: 34%; padding-top: 130px; margin-left: 11px;">
       
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
-        <input type="submit" class="button2" value="Actif">
-      </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+      <input type="submit" class="button2" value="Actif">
+    </div>
 
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-          <input type="submit" class="button2" value="Non-actif">
-        </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
+      <input type="submit" class="button2" value="Non-actif">
+    </div>
       </div>
       
     
-  </div>
-  </div>
-</div>
+    </div>
+    </div>
+    </div>
+
+</header>
+
 
 
     <!-- carré user -->
-    
-  
-    
-        
     <?php foreach($post as $posts): ?>
-      <div class="col-lg-6">
+    <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
     <div style="padding-top: 100px;">
@@ -111,15 +117,25 @@ catch(PDOException $e) {
           </div>
           </div>
         </form>
-    
-        
         <?php endforeach ?>
-         
       
-
-
-
+      
+        <p style="color: white;">m</p>
+     <div class="footer">
+    <div class="navbar fixed-bottom">  
+    <div class="container-sm">
+    <div style="border: 1px solid #8BC345; width: 98%; height: 255px; border-radius:16px; padding-top: 15px;">
+    </div>
+    </div>
+    </div>
+    
+    </div>
+        
+         
 </div>
 </div>
+</div>
+
+
 </body>
 </html>
