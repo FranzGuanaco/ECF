@@ -105,7 +105,7 @@ catch(PDOException $e) {
         <div class="col-xs-7 text-center col-sm-7 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
           <label class="switch">
-          <input type="checkbox" id="togBtn" name="valder" onclick="myFunction()" >
+          <input type="checkbox" id="togBtn" onclick="myFunction()" >
           <div class="slider round"></div>
           </label>
           <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'">

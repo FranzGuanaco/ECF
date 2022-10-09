@@ -82,6 +82,22 @@ input:checked + .slider:after
 
 }
 
+.button3:hover {
+  background-color: #75A233;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #B2CE79;
+  width: 325px;
+  height: 120px;
+  border-radius: 16px;
+  
+
+}
+
 .button1:hover {
   background-color: #75A233;
   color: white;
@@ -103,12 +119,34 @@ input{
 
 }
 
+.button4 {
+  background-color: white; 
+  color: #75A233; 
+  border: 2px solid #B2CE79;
+  width: 147px;
+  height: 119px;
+  border-radius: 16px;
+  
+
+}
+
 
 .user_style{
   border: 1px solid #0C0808; 
   background-color: white;
-  margin-left: 35px;
   width: 770px; 
+  height: 300px; 
+  border-radius:16px; 
+  padding-top: 60px;
+  
+  
+}
+
+.user_style2{
+  border: 1px solid #0C0808; 
+  background-color: white;
+  margin-left: 15px;
+  width: 1594px; 
   height: 300px; 
   border-radius:16px; 
   padding-top: 60px;
@@ -123,3 +161,15 @@ input{
   width: 100%;
 }
 
+
+
+.list {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #B2CE79;
+  width: 422px;
+  height: 103px;
+  border-radius: 16px;
+  
+
+}
