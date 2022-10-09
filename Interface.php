@@ -28,6 +28,7 @@ catch(PDOException $e) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='interface.css'>
+    <script src='alert.js' defer></script>
     
    
    
@@ -68,12 +69,18 @@ catch(PDOException $e) {
 
     <!-- carré user -->
     
+  
+    
+        
     <?php foreach($post as $posts): ?>
-    <div style="padding-left: 35px; padding-top: 200px;">
-<div style="border: 1px solid #0C0808; width: 770px; height: 300px; border-radius:16px; padding-top: 60px;">
+      <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+    <div style="padding-top: 100px;">
+
         <form action="function.php" method="POST" name="Marc Ruffier">
 
-    
+    <div class="user_style">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
             <p><?= $posts->Id ?></p>
             <p><?= $posts->name ?></p>
@@ -81,7 +88,7 @@ catch(PDOException $e) {
             <p>url</p>
         </div>
       
-          
+    
 
       
      
@@ -92,31 +99,27 @@ catch(PDOException $e) {
         <div class="col-xs-7 text-center col-sm-7 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
           <label class="switch">
-          <input type="checkbox" id="togBtn" name="valder" onclick="myFunction()" checked>
+          <input type="checkbox" id="togBtn" name="valder" onclick="myFunction()" >
           <div class="slider round"></div>
           </label>
           <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'">
+    </div>
         </div>
-
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </form>
+    
+        
         <?php endforeach ?>
          
       
 
 
-</form>
+
 </div>
 </div>
 </body>
-<script>
-    function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-  
-
-}
-</script>
 </html>
