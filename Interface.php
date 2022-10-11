@@ -1,4 +1,5 @@
 <?php
+
 $mysqlDsn = 'mysql: host=localhost; dbname=dbClient';
 
 try {
@@ -36,11 +37,7 @@ catch(PDOException $e) {
 </head>
 <body style="height:100%;">
 
-<div style="border: 1px solid #443E3E; width: 100%; height: 55px;">
-<div style="padding-left: 35px; padding-top: 10px;">
-<h4>API SALLE DE SPORT</h4>
-</div>
-</div>
+
     
 <header>
    <!-- 1er carré example -->
@@ -49,7 +46,7 @@ catch(PDOException $e) {
     <div class="container-sm">
   <div style="border: 1px solid #8BC345; width: 98%; height: 255px; border-radius:16px; padding-top: 15px;">
 
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
+    <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
       <input type="text" class="button1" placeholder="Client_name">
     </div>
 
@@ -79,21 +76,34 @@ catch(PDOException $e) {
 
     <!-- carré user -->
     <?php foreach($post as $posts): ?>
-    <div class="col-lg-6">
+      
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="card">
             <div class="card-body">
-    <div style="padding-top: 100px;">
+    <div style="padding-top: 10px;">
 
         <form action="function.php" method="POST" name="Marc Ruffier">
 
+
     <div class="user_style">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+
+
+        
             <p><?= $posts->Id ?></p>
             <p><?= $posts->name ?></p>
             <p><?= $posts->description ?></p>
             <p>url</p>
         </div>
       
+        <?php if($row['Activation']===0){
+
+          echo 'Actif';
+        }
+        else{
+
+          echo 'a';
+        } ?>
     
 
       
@@ -102,13 +112,13 @@ catch(PDOException $e) {
 
       
 
-        <div class="col-xs-7 text-center col-sm-7 col-md-7 col-lg-7 " style="padding-top: 75px;" >
+        <div class="col-xs-1 col-sm-12 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
           <label class="switch">
           <input type="checkbox" id="togBtn" onclick="myFunction()" >
           <div class="slider round"></div>
           </label>
-          <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'">
+          <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'" >
     </div>
         </div>
           </div>
@@ -120,16 +130,6 @@ catch(PDOException $e) {
         <?php endforeach ?>
       
       
-        <p style="color: white;">m</p>
-     <div class="footer">
-    <div class="navbar fixed-bottom">  
-    <div class="container-sm">
-    <div style="border: 1px solid #8BC345; width: 98%; height: 255px; border-radius:16px; padding-top: 15px;">
-    </div>
-    </div>
-    </div>
-    
-    </div>
         
          
 </div>
