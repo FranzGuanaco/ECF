@@ -17,6 +17,7 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     ?>
 
 
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +30,30 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='interface.css'>
     <script src='alert.js' defer></script>
-    
-   
-   
-    
+
+    <!-- Using internal/embedded css -->
+    <style>
+        .btn{
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .green{
+            background-color: #199319;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>    
 </head>
-<body style="height:100%;">
 
 
     
@@ -70,90 +89,83 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     </div>
 
 </header>
-
-
-
-<?php
+     
+    
   
-  // Use foreach to access all the courses data
-  foreach ($posts as $post) { ?>
+<body>
+    
+        <?php
+  
+            // Use foreach to access all the courses data
+            foreach ($posts as $course) { ?>
 
-      
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="card">
             <div class="card-body">
     <div style="padding-top: 10px;">
 
-        <form action="function.php" method="POST" name="Marc Ruffier">
+        <form >
 
 
     <div class="user_style">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
-
-
-        
-            <p><?php echo $post['Id']; ?></p>
-            <p><?php echo $post['name']; ?></p>
-            <p><?php echo $post['description']; ?></p>
+        <p><?php echo $course['Id']; ?></p>
+            <p><?php echo $course['name']; ?></p>
+            <p><?php echo $course['description']; ?></p>
             <p>url</p>
         </div>
-      
-        
-        <?php 
-                        
-                        if($post['Activation']=="1") 
+           <?php 
+                        // Usage of if-else statement to translate the 
+                        // tinyint status value into some common terms
+                        // 0-Inactive
+                        // 1-Active
+                        if($course['Activation']=="1") 
                             echo "Active";
                         else 
                             echo "Inactive";
-                    ?>               
+                    ?>                          
+               
 
-      
 
-     
-      <!-- switch button checker margin -->
 
-      
 
-        <div class="col-xs-1 col-sm-12 col-md-7 col-lg-7 " style="padding-top: 75px;" >
+
+
+
+               <div class="col-xs-1 col-sm-12 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
-          <label class="switch">
-          <input type="checkbox" id="togBtn" onclick="myFunction()" <?php 
-                    if($post['Activation']=="1") 
+               
+            <?php
+                    if($course['Activation']=="1") 
   
+                        
                         echo 
-"<a href=deactivate.php?id=".$post['Id']." checked >checked</a>";
+"<a href=deactivate.php?Id=".$course['Id']." <label class='switch'><input type='checkbox' id='togBtn' checked>
+<div class='slider round'></div>
+</label> ></a>";
                     else 
                         echo 
-"<a href=activate.php?id=".$post['Id']."></a>";
-                    ?>>
-          
-          <div class="slider round"></div>
-          </label>
-          <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'" >
+"<a href=activate.php?Id=".$course['Id']." <label class='switch'><input type='checkbox' id='togBtn' onclick='myFunction()' >
+<div class='slider round'></div>
+</label>
+<input type='submit' id='myDIV' style='display: none;' name='valider' onclick='style.display = 'none'' >></a>";
+                    ?>
+            
 
-
-          
-    </div>
+            </div>
         </div>
           </div>
             </div>
               </div>
                 </div>
                  </div>
-                  </form>
-        <?php
+            </form>
+           <?php
                 }
                 // End the foreach loop 
            ?>
-
-      
-      
-        
-         
-</div>
-</div>
-</div>
-
-
+   
 </body>
+  
 </html>
