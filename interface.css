@@ -33,6 +33,10 @@
   border-radius: 50%;
 }
 
+.slider.round {
+  border-radius: 34px;
+}
+
 input:checked + .slider {
   background-color: #89C445;
 }
@@ -373,7 +377,7 @@ input{
 
 .div-permission {
   display: table-cell;
-  vertical-align: right;
+  vertical-align: middle;
   height: 45px;
   width: 900px;
   border: 1px solid red;

@@ -1,21 +1,20 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$database ="dbClient";
 
-$mysqlDsn = 'mysql: host=localhost; dbname=dbClient';
+$con = mysqli_connect($servername, $username, $password, $database);
 
-try {
-
-$pdo = new PDO($mysqlDsn, $db_password ='root', $db_user ='root');
-
-$query = $pdo ->query("SELECT * FROM Clients_data Order by Id DESC");
-$post = $query -> fetchAll(PDO::FETCH_OBJ);
-}
-
-catch(PDOException $e) {
-  echo "rpr". $e->getMessage();
-
-}
-
-  ?>
+  
+  
+// Get all the courses from courses table
+// execute the query 
+// Store the result
+$sql = "SELECT * FROM `Clients_data`";
+$Sql_query = mysqli_query($con,$sql);
+$posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
+    ?>
 
 
 <!DOCTYPE html>
@@ -74,8 +73,11 @@ catch(PDOException $e) {
 
 
 
-    <!-- carré user -->
-    <?php foreach($post as $posts): ?>
+<?php
+  
+  // Use foreach to access all the courses data
+  foreach ($posts as $post) { ?>
+
       
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="card">
@@ -90,23 +92,23 @@ catch(PDOException $e) {
 
 
         
-            <p><?= $posts->Id ?></p>
-            <p><?= $posts->name ?></p>
-            <p><?= $posts->description ?></p>
+            <p><?php echo $post['Id']; ?></p>
+            <p><?php echo $post['name']; ?></p>
+            <p><?php echo $post['description']; ?></p>
             <p>url</p>
         </div>
       
-        <?php if($row['Activation']===0){
-
-          echo 'Actif';
-        }
-        else{
-
-          echo 'a';
-        } ?>
-    
+        
+        <?php 
+                        
+                        if($post['Activation']=="1") 
+                            echo "Active";
+                        else 
+                            echo "Inactive";
+                    ?>               
 
       
+
      
       <!-- switch button checker margin -->
 
@@ -115,19 +117,35 @@ catch(PDOException $e) {
         <div class="col-xs-1 col-sm-12 col-md-7 col-lg-7 " style="padding-top: 75px;" >
           
           <label class="switch">
-          <input type="checkbox" id="togBtn" onclick="myFunction()" >
+          <input type="checkbox" id="togBtn" onclick="myFunction()" <?php 
+                    if($post['Activation']=="1") 
+  
+                        echo 
+"<a href=deactivate.php?id=".$post['Id']." checked >checked</a>";
+                    else 
+                        echo 
+"<a href=activate.php?id=".$post['Id']."></a>";
+                    ?>>
+          
           <div class="slider round"></div>
           </label>
           <input type="submit" id="myDIV" style="display: none;" name="valider" onclick="style.display = 'none'" >
+
+
+          
     </div>
         </div>
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
-        </form>
-        <?php endforeach ?>
+            </div>
+              </div>
+                </div>
+                 </div>
+                  </form>
+        <?php
+                }
+                // End the foreach loop 
+           ?>
+
       
       
         
