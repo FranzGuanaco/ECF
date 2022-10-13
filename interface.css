@@ -349,7 +349,7 @@ input{
 
   height: 50px;
   width: 500px;
-  background-color: #555;
+
   content: 'no';
 }
 
@@ -357,16 +357,14 @@ input{
   display: table-cell;
   vertical-align: middle;
   height: 60px;
-  border: 1px solid red;
+
 }
 
 .div-label {
   display: table-cell;
   vertical-align: middle;
   height: 50px;
-  width: 100px;
-  border: 1px solid red;
-}
+  width: 100px;}
 
 .button10 {
   background-color: white; 
@@ -383,7 +381,7 @@ input{
   vertical-align: middle;
   height: 45px;
   width: 900px;
-  border: 1px solid red;
+  
 }
 
 .div-permission2 {

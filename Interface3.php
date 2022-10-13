@@ -7,6 +7,7 @@ $database ="dbClient";
 $con = mysqli_connect($servername, $username, $password, $database);
 
 $casual = "SELECT * FROM `Clients_data`";
+$add = 
 
 $nofiltre = mysqli_query($con,$casual);
 $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
@@ -38,7 +39,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
     </div>
         <div class="div-input">
-            <div class="size"><h1>members_read</h1></div><br>
+            <div class="size"><p>members_read</p></div><br>
     </div>
 </div>
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9">
@@ -46,7 +47,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
     </div>
         <div class="div-input">
-        <div class="size"><h1>members_write</h1></div><br>
+        <div class="size"><p>members_write</p></div><br>
 
         <?php
                     if($posts['members_read']=="0") 
@@ -65,7 +66,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
         </div>
         <div class="div-input">
-            <div class="size"><h1>members_add</h1></div><br>
+            <div class="size"><p>members_add</p></div><br>
     </div>
 </div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
@@ -73,7 +74,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
        
         </div>
         <div class="div-input">
-            <div class="size"><h1>members_payment_schedule_read</h1></div><br>
+            <div class="size"><p>members_payment_schedule_read</p></div><br>
         </div>
         </div>
         
@@ -86,7 +87,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
     </div>
         <div class="div-input">
-        <div class="size"><h1>members_products_read</h1></div><br>
+        <div class="size"><p>members_products_read</p></div><br>
     </div>
     </div>
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9">
@@ -94,7 +95,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
         </div>
         <div class="div-input">
-            <div class="size"><h1>payment_schedule_read</h1></div><br>
+            <div class="size"><p>payment_schedule_read</p></div><br>
     </div>
 </div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
@@ -102,7 +103,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
        
         </div>
         <div class="div-input">
-            <div class="size"><h1>payment_schedule_write</h1></div><br>
+            <div class="size"><p>payment_schedule_write</p></div><br>
         </div>
         </div>
         
@@ -113,7 +114,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
     </div>
         <div class="div-input">
-        <div class="size"><h1>members_statistiques_read</h1></div><br>
+        <div class="size"><p>members_statistiques_read</p></div><br>
     </div>
     </div>
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9">
@@ -121,7 +122,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         
         </div>
         <div class="div-input">
-            <div class="size"><h1>payment_day_read</h1></div><br>
+            <div class="size"><p>payment_day_read</p></div><br>
     </div>
 </div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
@@ -129,7 +130,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
        
         </div>
         <div class="div-input">
-            <div class="size"><h1>members_subscription_read</h1></div><br>
+            <div class="size"><p>members_subscription_read</p></div><br>
         </div>
         </div>
         
