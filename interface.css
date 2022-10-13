@@ -347,7 +347,10 @@ input{
 
 .size{
 
+  height: 50px;
   width: 500px;
+  background-color: #555;
+  content: 'no';
 }
 
 .div-input {
