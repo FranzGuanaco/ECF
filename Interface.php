@@ -6,21 +6,37 @@ $database ="dbClient";
 
 $con = mysqli_connect($servername, $username, $password, $database);
 
-$essai = $_POST['boutton_inactif'];
+$inactif = $_POST['boutton_inactif'];
+$actif = $_POST['boutton_actif'];
+$s = $_POST['se'];
+$data = $_POST['search'];
  
-$sql = "SELECT * FROM `Clients_data` where Activation = 1";
-$requete = "SELECT * FROM `Clients_data` where Activation = 0";
+$requete_actif = "SELECT * FROM `Clients_data` where Activation = 1";
+$requete_inactif = "SELECT * FROM `Clients_data` where Activation = 0";
+$casual = "SELECT * FROM `Clients_data`";
+$search_box = "SELECT * FROM `Clients_data` where name = '$data' ";
 
-if(isset($essai)){
-  $filtre = mysqli_query($con,$requete);
-$posts = mysqli_fetch_all($filtre,MYSQLI_ASSOC);
+$nofiltre = mysqli_query($con,$casual);
+$posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
+
+if(isset($inactif)){
+  $filtre1 = mysqli_query($con,$requete_inactif);
+$posts = mysqli_fetch_all($filtre1,MYSQLI_ASSOC);
 
 }
 
-else{
-$Sql_query = mysqli_query($con,$sql);
-$posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
+if(isset($actif)){
+$filtre2 = mysqli_query($con,$requete_actif);
+$posts = mysqli_fetch_all($filtre2,MYSQLI_ASSOC);
 }
+
+
+if(isset($s)) {  
+  $filtre3 = mysqli_query($con,$search_box);
+  $posts = mysqli_fetch_all($filtre3,MYSQLI_ASSOC);
+}
+
+
 
     ?>
 
@@ -50,13 +66,18 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     <div class="container-sm">
   <div style="border: 1px solid #8BC345; width: 98%; height: 255px; border-radius:16px; padding-top: 15px;">
 
+  <form action="Interface.php" method="POST" >
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
-      <input type="text" class="button1" placeholder="Client_name" name="">
+      <input type="text" class="button1" placeholder="Client_name" name="search">
+      <input type="submit" name="se" hidden>
     </div>
 
+  
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1" style="margin-left: 11px;">
       <input type="text" class="button1" placeholder="Client_id">
+      <input type="submit" hidden />
     </div>
+</form>
 
     <div style="width: 28%; height: 34%; padding-top: 130px; margin-left: 11px;">
       
