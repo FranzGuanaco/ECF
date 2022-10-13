@@ -6,14 +6,22 @@ $database ="dbClient";
 
 $con = mysqli_connect($servername, $username, $password, $database);
 
-  
-  
-// Get all the courses from courses table
-// execute the query 
-// Store the result
-$sql = "SELECT * FROM `Clients_data`";
+$essai = $_POST['boutton_inactif'];
+ 
+$sql = "SELECT * FROM `Clients_data` where Activation = 1";
+$requete = "SELECT * FROM `Clients_data` where Activation = 0";
+
+if(isset($essai)){
+  $filtre = mysqli_query($con,$requete);
+$posts = mysqli_fetch_all($filtre,MYSQLI_ASSOC);
+
+}
+
+else{
 $Sql_query = mysqli_query($con,$sql);
 $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
+}
+
     ?>
 
 
@@ -30,29 +38,7 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='interface.css'>
     <script src='alert.js' defer></script>
-
-    <!-- Using internal/embedded css -->
-    <style>
-        .btn{
-            background-color: red;
-            border: none;
-            color: white;
-            padding: 5px 5px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 20px;
-        }
-        .green{
-            background-color: #199319;
-        }
-        .red{
-            background-color: red;
-        }
-    </style>    
+  
 </head>
 
 
@@ -65,7 +51,7 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
   <div style="border: 1px solid #8BC345; width: 98%; height: 255px; border-radius:16px; padding-top: 15px;">
 
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
-      <input type="text" class="button1" placeholder="Client_name">
+      <input type="text" class="button1" placeholder="Client_name" name="">
     </div>
 
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1" style="margin-left: 11px;">
@@ -74,19 +60,24 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
 
     <div style="width: 28%; height: 34%; padding-top: 130px; margin-left: 11px;">
       
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
-      <input type="submit" class="button2" value="Actif">
-    </div>
 
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-      <input type="submit" class="button2" value="Non-actif">
+    <form action="Interface.php" method="POST" >
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+      <input type="submit" class="button2" value="Actif" name="boutton_actif">
     </div>
-      </div>
-      
+   
+
     
-    </div>
-    </div>
-    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
+      <input type="submit" class="button2" value="Non-actif" name="boutton_inactif">
+      </div>
+</form>
+
+   
+      </div>
+        </div>
+          </div>
+            </div>
 
 </header>
      
@@ -96,7 +87,7 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
     
         <?php
   
-            // Use foreach to access all the courses data
+            // Un foreach pour afficher toutes la base de données
             foreach ($posts as $course) { ?>
 
 
@@ -116,21 +107,13 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
             <p>url</p>
         </div>
            <?php 
-                        // Usage of if-else statement to translate the 
-                        // tinyint status value into some common terms
-                        // 0-Inactive
-                        // 1-Active
+                        
                         if($course['Activation']=="1") 
                             echo "Active";
                         else 
                             echo "Inactive";
                     ?>                          
                
-
-
-
-
-
 
 
                <div class="col-xs-1 col-sm-12 col-md-7 col-lg-7 " style="padding-top: 75px;" >
@@ -153,7 +136,7 @@ $posts = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
                     ?>
             
 
-            </div>
+      </div>
         </div>
           </div>
             </div>
