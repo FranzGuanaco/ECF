@@ -357,6 +357,8 @@ input{
   display: table-cell;
   vertical-align: middle;
   height: 60px;
+  border-radius: 1px;
+  border: 1px solid black;
 
 }
 

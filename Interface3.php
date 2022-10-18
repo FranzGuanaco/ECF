@@ -6,11 +6,24 @@ $database ="dbClient";
 
 $con = mysqli_connect($servername, $username, $password, $database);
 
-$casual = "SELECT * FROM `Clients_data`";
-$add = 
+$user = $_POST['nouveau_user'];
+$s = $_POST['se'];
+
+$new_User="INSERT INTO Clients_data (name, description, url, Activation) VALUES ('$user', 'manager', '', 1)";
 
 $nofiltre = mysqli_query($con,$casual);
 $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
+
+if (isset($s)){
+
+    $resultat = mysqli_query($con,$new_User);
+
+
+}
+
+
+
+
 
 
 ?>
@@ -29,6 +42,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
 
 
     <div class="container-sm">
+        <form action= "Interface3.php" method="POST">
     <div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
             <div class="div-label">
@@ -45,19 +59,20 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9">
         <div class="div-label">
         
+
     </div>
         <div class="div-input">
         <div class="size"><p>members_write</p></div><br>
 
         <?php
-                    if($posts['members_read']=="0") 
+                    if($posts['members_read']==0) 
   
                         
                         echo 
-'oui';
+                        'oui';
                     else 
                         echo 
-"r";
+                        "r";
                     ?>
     </div>
     </div>
@@ -135,11 +150,12 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
         </div>
         
         </div>
-      </form>
+      
     </div>
 
     <div class="div-permission">
-    <input type="text" class="button10" placeholder="Client_name">
+    <input type="text" class="button10" placeholder="Client_name" name="nouveau_user">
+    <input type="submit" name="se" hidden>
     
     <label class="switch">
         <input type="checkbox" id="togBtn" onclick="myFunction()" >
@@ -149,7 +165,7 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
   </div>
 
     </div>
-
+    </form>
  
     
 

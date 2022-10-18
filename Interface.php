@@ -8,7 +8,7 @@ $con = mysqli_connect($servername, $username, $password, $database);
 
 $inactif = $_POST['boutton_inactif'];
 $actif = $_POST['boutton_actif'];
-$s = $_POST['se'];
+$so = $_POST['se'];
 $data = $_POST['search'];
  
 $requete_actif = "SELECT * FROM `Clients_data` where Activation = 1";
@@ -31,7 +31,7 @@ $posts = mysqli_fetch_all($filtre2,MYSQLI_ASSOC);
 }
 
 
-if(isset($s)) {  
+if(isset($so)) {  
   $filtre3 = mysqli_query($con,$search_box);
   $posts = mysqli_fetch_all($filtre3,MYSQLI_ASSOC);
 }
