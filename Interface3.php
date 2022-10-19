@@ -56,7 +56,10 @@ if (isset($newbutton)){
     <div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
             
-                    <input type="radio" name="bouton_non_toggle" >
+                    
+                    <label class='switch'><input type='checkbox' id='togBtn' name="bouton_non_toggle" >
+                    <div class='slider round'></div>
+                    </label>
                     
         
     </div>
