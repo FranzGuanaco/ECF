@@ -17,14 +17,10 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
 if (isset($s)){
 
     $resultat = mysqli_query($con,$new_User);
+    $posts = mysqli_fetch_all($resultat,MYSQLI_ASSOC);
 
 
 }
-
-
-
-
-
 
 ?>
 <!DOCTYPE html>
