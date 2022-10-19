@@ -8,8 +8,11 @@ $con = mysqli_connect($servername, $username, $password, $database);
 
 $user = $_POST['nouveau_user'];
 $s = $_POST['se'];
+$newbutton = $_POST['bouton_non_toggle'];
+
 
 $new_User="INSERT INTO Clients_data (name, description, url, Activation) VALUES ('$user', 'manager', '', 1)";
+$essai = "UPDATE `Clients_data` SET `members_write`=0 WHERE name = '$user'";
 
 $nofiltre = mysqli_query($con,$casual);
 $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
@@ -19,10 +22,21 @@ if (isset($s)){
     $resultat = mysqli_query($con,$new_User);
     $posts = mysqli_fetch_all($resultat,MYSQLI_ASSOC);
 
+}
+
+
+if (isset($newbutton)){
+
+    $resultats = mysqli_query($con,$essai);
+    $posts = mysqli_fetch_all($resultats,MYSQLI_ASSOC);
 
 }
 
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +55,9 @@ if (isset($s)){
         <form action= "Interface3.php" method="POST">
     <div>
         <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9 ">
-            <div class="div-label">
-                <label class="switch">
-                    <input type="checkbox" id="togBtn" onclick="myFunction()" >
-                    <div class="slider round"></div>
-                    </label>
+            
+                    <input type="radio" name="bouton_non_toggle" >
+                    
         
     </div>
         <div class="div-input">
@@ -74,8 +86,8 @@ if (isset($s)){
     </div>
     <div class="col-xs-5 pull-right col-sm-6 col-md-6 col-lg-9">
         <div class="div-label">
-        
-        </div>
+         </div>
+
         <div class="div-input">
             <div class="size"><p>members_add</p></div><br>
     </div>
