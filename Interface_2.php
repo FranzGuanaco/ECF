@@ -33,108 +33,53 @@ $posts = mysqli_fetch_all($nofiltre,MYSQLI_ASSOC);
     
 </head>
 
-    
-
-
-<body>
-
-<div style="padding-left: 25px; padding-top: 30px;">
-    <div class="container-sm">
-  <div style=" width: 98%; height: 150px; border-radius:16px; padding-top: 15px;">
-
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-9 pull-left " style="margin-left: 15px;">
-      <input type="submit" class="list" placeholder="o">
-    </div>
-
-    
-      
-    
-    </div>
-    </div>
-    </div>
-
-    <div style="padding-left: 55px; padding-top: 30px;">
-        <div class="container-sm">
-      <div style="border: 1px solid #8BC345; width: 1594px; height: 345px; border-radius:16px; padding-top: 35px;">
-    
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
-            <div style="margin-left: 15px;">
-          <input type="text" class="button3" placeholder="Salle">
-            </div>
-          <div style="padding-top:20px;">
-            
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-          <input type="submit" class="button4" value="Actif">
-            </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
-            <div style="margin-left: 5px;">
-          <input type="submit" class="button4" value="Non-actif">
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1" style="margin-left: 100px;">
-          <input type="submit" class="button3" value="Toutes">
-          <div style="padding-top:20px;">
-          <input type="submit" class="button3" value="Ajouter">
-        </div>
-        </div>
-       
-        
-
-    
-        
-        
-          </div>
-          
-          
-        </div>
-        </div>
-        </div>
-
-        
 
 <?php 
 
 foreach ($posts as $course) { ?>
 
+ 
 
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="card">
+      <div class="card-body">
+          <div style="padding-top: 90px; padding-left: 30px;">
+              <div class="user_style2">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-    <!-- carré user -->
-        
-        
-       
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="card">
-            <div class="card-body">
-   
+                          <p>install_id</p>
+                          <p>branch_id</p>
+                      </div>
+                      <button >Try it</button>
 
-            <div style="padding-top: 90px; padding-left: 30px;">
-    <div class="user_style2">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-    
-      
-    
-    
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <p><?php echo $course['Id']; ?></p>
-            <p>install_id</p>
-            <p>branch_id</p>
-            
-        </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                 
+
+                      <div class="DIV" name="DIV">
+                          This is my DIV element.
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
-         
-        <?php
+<?php
                 }
                 // End the foreach loop 
            ?>
 
+<script>
+
+document.addEventListener('click',e=>{
+  if( e.target.tagName=='BUTTON' ){
+    let div=e.target.parentNode.querySelector('div.DIV');
+      div.style.display=div.style.display=='block' ? 'none' : 'block'
+  }
+})
+</script>
+
 
 </body>
-</html>
